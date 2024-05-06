@@ -1,20 +1,35 @@
 # Software de Control Autónomo de Embarcaciones de la Universidad de San Andrés
 
-## Levantar el projecto 
- para iniciar el projecto se recomibenda levantarlo de forma local utlizando Node Js Y Ros 2 Humble. Como sistema opertaivo se enfatiza el uso de Linux Ubuntu ya que facilitara su uso o desarrollo 
+## Levantar el proyecto de forma local
+Para iniciar el proyecto se recomienda levantarlo de forma local utlizando [Node Js](https://nodejs.org/en), [Ros 2 Humble](https://docs.ros.org/en/humble) y [micro-ROS](https://micro.ros.org/). 
 
- Node Js: https://nodejs.org/en
+Como sistema operativo se enfatiza el uso de Linux Ubuntu 22.04 ya que facilitará su uso y/o desarrollo.
+
+Además, para que quede prestablecido Ros2, en una terminal ejecutar para abrir el archivo de configuración:
  
- Ros 2: https://docs.ros.org/en/humble
-
- Apesar de esto se esta de desarrollando una alternativa con Docker 
-    Debe Ejecutar los sigueintes comandos:
- ``` 
-    docker build -t Nautilus .
+```
+gedit ~/.bashrc
+```
+ 
+Ir al final y en líneas nuevas insertar y guardar el documento:
+```
+source /opt/ros/humble/setup.bash
+source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
 ```
 
-Cuando Finalize debe ejecutar:
+Para más detalles sobre el procedimiento consultar este [tutorial](https://www.youtube.com/watch?v=Gg25GfA456o).
 
+Para correr el proyecto leer el [README](./openmct/README.md) en \openmct.
+
+## Levantar el proyecto desde un contenedor de Docker
+Para correr el proyecto desde un contenedor de Docker se debe tener instalado y corriendo el servicio de [Docker](https://docs.docker.com/get-docker/) y ejecutar los siguientes comandos desde la terminal en el path correspondiente a este proyecto:
+``` 
+docker build -t Nautilus .
 ```
-    docker run -p 8080:8080 Nautilus
+
+> *Advertencia*: El build puede tardar varios minutos la primera vez que se corre. Se recomienda tener una buena conexión a internet.
+
+Cuando finalice debe ejecutar:
+```
+docker run -p 8080:8080 Nautilus
 ```
