@@ -1,17 +1,17 @@
-FROM ubuntu:latest
+FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update -y && \
     apt upgrade -y && \
     apt install -y curl && \
-    curl -fsSL https://deb.nodesource.com/setup_14.x | bash - && \
+    curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y nodejs
 
 
 RUN apt-get install -y locales && locale-gen en_US.UTF-8 && update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 ENV LANG=en_US.UTF-8
 
-    RUN apt-get install -y software-properties-common && add-apt-repository universe
+    RUN apt-get update && apt-get install -y --fix-missing software-properties-common && add-apt-repository universe
 
     RUN apt update -y && apt install -y curl && curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 
@@ -19,7 +19,10 @@ ENV LANG=en_US.UTF-8
 
     RUN apt update -y && apt upgrade -y
 
-    RUN apt install ros-humble-desktop -y
+    RUN apt-get install -y systemd udev
+
+    RUN apt update -y && apt install ros-humble-desktop -y
+
 
 RUN /bin/bash -c "source /opt/ros/humble/setup.bash"    
 
