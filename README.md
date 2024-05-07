@@ -27,7 +27,7 @@ Para correr el proyecto desde un contenedor de Docker se debe tener instalado y 
 docker build -t Nautilus .
 ```
 
-> *Advertencia*: El build puede tardar varios minutos la primera vez que se corre. Se recomienda tener una buena conexión a internet.
+> *Advertencia*: El build puede tardar varios minutos la primera vez que se corre. Se recomienda tener una buena conexión a internet, la imagen pesa más de 4gb.
 
 Cuando finalice debe ejecutar:
 ```
