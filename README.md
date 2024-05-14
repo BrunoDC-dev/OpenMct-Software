@@ -1,7 +1,7 @@
 # Software de Control Autónomo de Embarcaciones de la Universidad de San Andrés
 
 ## Levantar el proyecto de forma local
-Para iniciar el proyecto se recomienda levantarlo de forma local utlizando [Node Js](https://nodejs.org/en) (IMPORTANTE tiene que ser la versión 20), [Ros 2 Humble](https://docs.ros.org/en/humble) y [micro-ROS](https://micro.ros.org/). 
+Para iniciar el proyecto se recomienda levantarlo de forma local utlizando [Node Js](https://nodejs.org/en) (IMPORTANTE tiene que ser la versión 20.13.1), [Ros 2 Humble](https://docs.ros.org/en/humble) y [micro-ROS](https://micro.ros.org/). 
 
 Como sistema operativo se enfatiza el uso de Linux Ubuntu 22.04 ya que facilitará su uso y/o desarrollo.
 
