@@ -31,8 +31,6 @@ RUN apt-get update && apt-get install -y python3-rosdep
 
 RUN rosdep init
 
-
-
 RUN /bin/bash -c "\
     source /opt/ros/$ROS_DISTRO/setup.bash && \
     mkdir -p microros_ws/src && \
